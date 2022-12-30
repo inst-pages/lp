@@ -1,69 +1,138 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import LandingView from "../components/views/LandingView";
+
+const DATA = {
+  modal: {
+    formAction: "",
+  },
+  seo: {
+    title: "WatchFly Early Access",
+    description: "WatchFly Early Access - Get on the Beta Waitlist now",
+    url: "",
+    siteImgAlt: "",
+    siteImgSrc: "",
+  },
+  hero: {
+    heading: "Willy's Wondrous World",
+    topheading: "Discover the World of",
+    description:
+      "Follow the adventures of Willy, a curious 6 year old boy, and his sister Willow, a playful 4 year old, as they explore the wonders of the world and learn about everything from ancient civilizations to the mysteries of the cosmos.",
+    imageSrc: "/images/app/phone-1.png",
+    modal: {
+      btnOpen: "Join Our (Beta)-Access Waitlist",
+      btnConfirm: "Sign Me Up For Early Access!",
+      heading: "Join Our (Beta)-Access Waitlist",
+    },
+  },
+  benefits: {
+    heading:
+      "Welcome to Willy and Willow's World of Learning!",
+    benefits: [
+      {
+        heading: "Entertaining and Educational!",
+        description:
+          "With a variety of age-appropriate content that includes topics like space, oceans, dinosaurs, and history, your children will be entertained for hours on end as they explore the wonders of the world.",
+      },
+      {
+        heading: "Develops important skills",
+        description:
+          "With interactive paths that let kids decide how Willy and Willos story develops, they'll be strengthening their curiosity and problem-solving skills along the way.",
+      },
+    ],
+  },
+  values: {
+    heading: "join the Beta-access waitlist now",
+    subheading:
+      "Don't miss out on the chance to be a part of something big",
+    values: [
+      {
+        heading: "Join the ranks of satisfied parents",
+        description:
+          "Ready to join the ranks of satisfied parents whose children are learning and having fun with Willy and Willow's World of Learning? Don't wait – sign up for the Beta-access waitlist now!",
+      },
+      {
+        heading: "The Smart Way to Make More Money",
+        description:
+          "You'll be among the first to access the game once it becomes available. You'll have the chance to try out all of the exciting features and educational content, and provide valuable feedback to help us make the game even better.",
+      },
+      {
+        heading: "Join the Beta-access waitlist",
+        description:
+          "Join the Beta-access waitlist for Willy and Willow's World of Learning now! As a member, you'll be among the first to take a sneak peek at the game and provide valuable feedback to help us make it even more amazing.",
+      },
+    ],
+  },
+  features: [
+    {
+      category: "Fun & Educational",
+      heading: "Fun and Educational",
+      description:
+        "With colorful graphics and interactive gameplay, Willy and Willow's World of Learning keeps your children entertained while they learn about the world around them. Plus, with a variety of age-appropriate content, your children will be able to progress at their own pace and continue to learn and grow as they play.",
+      imageSrc: "/bg-jungle.png",
+      isLeft: false,
+      modal: {
+        btnOpen: "Join Our (Beta)-Access Waitlist",
+        btnConfirm: "Sign Me Up For Early Access!",
+        heading: "Join Our (Beta)-Access Waitlist",
+        description: "",
+      },
+    },
+    {
+      category: "Deeper Insights",
+      heading: "See Your Child's Learning Progress Unfold",
+      description:
+        "But don't just take our word for it – the proof is in the progress. With a variety of age-appropriate content and the ability to track your child's progress, you'll see firsthand just how much they're learning as they play. And as a parent, you can feel good knowing that you're providing your children with a fun and educational activity that will keep them coming back for more.",
+      imageSrc: "/tree.png",
+      isLeft: true,
+      modal: {
+        btnOpen: "Join Our (Beta)-Access Waitlist",
+        btnConfirm: "Sign Me Up For Early Access!",
+        heading: "Join Our (Beta)-Access Waitlist",
+        description: "",
+      },
+    },
+    {
+      category: "Always Engaging",
+      heading: "Engaging and Exciting",
+      description:
+      "Keep your children engaged and excited to learn with Willy and Willow's World of Learning – a game that never gets boring or repetitive!",
+      imageSrc: "/t-rex.png",
+      isLeft: false,
+      modal: {
+        btnOpen: "Join Our (Beta)-Access Waitlist",
+        btnConfirm: "Sign Me Up For Early Access!",
+        heading: "Join Our (Beta)-Access Waitlist",
+        description: "",
+      },
+    },
+  ],
+  testimonial: {
+    content:
+      "I was struggling to find good trading opportunities and keep track of all the latest news. But this app has solved all of that for me. I'm now able to focus on what I'm good at - making profitable trades!",
+    name: "Gregg Devin",
+    description: "Early Adopter",
+  },
+  statistics: [
+    { number: "2.7", unit: "K", label: "Users" },
+    { number: "2", unit: "K", label: "Users" },
+    { number: "2", unit: "K", label: "Users" },
+    { number: "2", unit: "K", label: "Users" },
+  ],
+  cta: {
+    heading: "Ready to join the ranks of satisfied parents?",
+    description:
+      "But don't wait – spots on the waitlist are filling up fast, and you don't want to be left behind as Willy and Willow embark on their epic journey of learning and discovery. So what are you waiting for? Sign up now and get ready to have a blast (while also learning some cool stuff, of course). Your kids will thank you for it.",
+      modal: {
+        btnOpen: "Join Our (Beta)-Access Waitlist",
+        btnConfirm: "Sign Me Up For Early Access!",
+        heading: "Join Our (Beta)-Access Waitlist",
+        description: "",
+      },
+  },
+};
 
 export default function Home() {
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Generated by create next app" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
-  )
+    <LandingView DATA={DATA} />
+  );
 }
