@@ -6,13 +6,12 @@ import Par from "../typography/Par";
 import Image from "next/image";
 import H2 from "../typography/H2";
 
-
-
-export default function LandingView({DATA}) {
-
+export default function LandingView({ DATA }) {
   return (
     <div className="bg-white dark:bg-black">
-      <section className="w-full min-h-screen bg-[url('/bg.png')] bg-cover bg-center flex flex-col justify-center items-center">
+      <section
+        className={`w-full min-h-screen bg-[url('${DATA.hero.imageSrc}')] bg-cover bg-center flex flex-col justify-center items-center`}
+      >
         <div className="container mx-auto flex flex-col justify-center items-center py-8 -mt-28 bg-white/40 dark:bg-black/40 rounded-3xl">
           <CurvedText
             id="topheading"
@@ -31,7 +30,9 @@ export default function LandingView({DATA}) {
           >
             {DATA.hero.heading}
           </CurvedText>
-          <h1 className="sm:hidden text-yellow-800 dark:text-yellow-500 leading-20 font-sans text-5xl text-center mb-6">{DATA.hero.heading}</h1>
+          <h1 className="sm:hidden text-yellow-800 dark:text-yellow-500 leading-20 font-sans text-5xl text-center mb-6">
+            {DATA.hero.heading}
+          </h1>
           <p className="font-mono font-semibold text-gray-700 dark:text-white text-lg max-w-lg -mt-0 mb-8 mx-4 md:mx-0 text-center">
             {DATA.hero.description}
           </p>
@@ -40,10 +41,10 @@ export default function LandingView({DATA}) {
             heading={DATA.hero.modal.heading}
             description={DATA.hero.modal.description}
           >
-            <SendInBlueForm label={DATA.hero.modal.btnConfirm} light/>
+            <SendInBlueForm label={DATA.hero.modal.btnConfirm} light />
           </ModalNew>
         </div>
-        <ScrollIndicator className="absolute bottom-8"/>
+        <ScrollIndicator className="absolute bottom-8" />
       </section>
       {/* Quick benefits */}
       <section className="w-full bg-gray-50 py-12 md:py-24 dark:bg-black">
@@ -52,7 +53,7 @@ export default function LandingView({DATA}) {
             <H2 className={"text-4xl"}>{DATA.benefits.heading}</H2>
           </div>
           {DATA.benefits.benefits.map((benefit, i) => (
-            <div key={"benefit"+i}>
+            <div key={"benefit" + i}>
               <H2 className="title-font mb-3 text-lg font-medium">
                 {benefit.heading}
               </H2>
@@ -63,7 +64,10 @@ export default function LandingView({DATA}) {
       </section>
       {/* FEATURES*/}
       {DATA.features.map((feature, i) => (
-        <section key={"feature"+i} className="font-sans container mx-auto grid grid-cols-1 place-items-center py-12 lg:mb-12 lg:grid-cols-2">
+        <section
+          key={"feature" + i}
+          className="font-sans container mx-auto grid grid-cols-1 place-items-center py-12 lg:mb-12 lg:grid-cols-2"
+        >
           <div
             className={`relative order-2 h-[28rem] w-full overflow-hidden rounded-l ${
               feature.isLeft ? "lg:order-2" : "lg:order-1"
@@ -108,8 +112,8 @@ export default function LandingView({DATA}) {
               {DATA.values.subheading}
             </Par>
           </div>
-          {DATA.values.values.map((value,i) => (
-            <div key={"value"+i}>
+          {DATA.values.values.map((value, i) => (
+            <div key={"value" + i}>
               <H2 className="title-font mb-3 text-lg font-medium">
                 {value.heading}
               </H2>
