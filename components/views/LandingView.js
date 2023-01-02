@@ -10,7 +10,8 @@ export default function LandingView({ DATA }) {
   return (
     <div className="bg-white dark:bg-black">
       <section
-        className={`w-full min-h-screen bg-[url('${DATA.hero.imageSrc}')] bg-cover bg-center flex flex-col justify-center items-center`}
+        style={{ backgroundImage: `url('${DATA.hero.imageSrc}')` }}
+        className="w-full min-h-screen bg-cover bg-center flex flex-col justify-center items-center"
       >
         <div className="container mx-auto flex flex-col justify-center items-center py-8 -mt-28 bg-white/40 dark:bg-black/40 rounded-3xl">
           <CurvedText

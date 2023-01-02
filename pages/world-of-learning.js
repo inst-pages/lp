@@ -16,8 +16,8 @@ const DATA = {
     topheading: "Discover the World of",
     description:
       "Follow the adventures of Willy, a curious 6 year old boy, and his sister Willow, a playful 4 year old, as they explore the wonders of the world and learn about everything from ancient civilizations to the mysteries of the cosmos.",
-    imageSrc: "https://res.cloudinary.com/dm5v3g2vu/image/upload/v1672620529/landing-pages/edu_kids_game/bg_min_ur40zi.png",
-    modal: {
+      imageSrc: "https://res.cloudinary.com/dm5v3g2vu/image/upload/v1672620529/landing-pages/edu_kids_game/bg_min_ur40zi.png",
+      modal: {
       btnOpen: "Join Our (Beta)-Access Waitlist",
       btnConfirm: "Sign Me Up For Early Access!",
       heading: "Join Our (Beta)-Access Waitlist",
