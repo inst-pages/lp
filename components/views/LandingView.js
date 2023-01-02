@@ -51,8 +51,8 @@ export default function LandingView({DATA}) {
           <div className={"md:col-span-2 lg:col-span-1"}>
             <H2 className={"text-4xl"}>{DATA.benefits.heading}</H2>
           </div>
-          {DATA.benefits.benefits.map((benefit) => (
-            <div>
+          {DATA.benefits.benefits.map((benefit, i) => (
+            <div key={"benefit"+i}>
               <H2 className="title-font mb-3 text-lg font-medium">
                 {benefit.heading}
               </H2>
@@ -62,8 +62,8 @@ export default function LandingView({DATA}) {
         </div>
       </section>
       {/* FEATURES*/}
-      {DATA.features.map((feature) => (
-        <section className="font-sans container mx-auto grid grid-cols-1 place-items-center py-12 lg:mb-12 lg:grid-cols-2">
+      {DATA.features.map((feature, i) => (
+        <section key={"feature"+i} className="font-sans container mx-auto grid grid-cols-1 place-items-center py-12 lg:mb-12 lg:grid-cols-2">
           <div
             className={`relative order-2 h-[28rem] w-full overflow-hidden rounded-l ${
               feature.isLeft ? "lg:order-2" : "lg:order-1"
@@ -108,8 +108,8 @@ export default function LandingView({DATA}) {
               {DATA.values.subheading}
             </Par>
           </div>
-          {DATA.values.values.map((value) => (
-            <div>
+          {DATA.values.values.map((value,i) => (
+            <div key={"value"+i}>
               <H2 className="title-font mb-3 text-lg font-medium">
                 {value.heading}
               </H2>
